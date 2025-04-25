@@ -43,9 +43,9 @@ df.to_csv(buffer, index=False, header=False)
 buffer.seek(0)
 
 # === IMPORTAÇÃO COM COPY (RÁPIDA E EFICIENTE) ===
-print("🚀 Iniciando importação com copy_expert...")
+print("[INICIO] Iniciando importação com copy_expert...")
 cur.copy_expert("COPY avaliacoes(user_id, id_filme, nota, timestamp) FROM STDIN WITH CSV", buffer)
 conn.commit()
 cur.close()
 conn.close()
-print("✅ Importação concluída com sucesso!")
+print("[OK] Importação concluída com sucesso!")

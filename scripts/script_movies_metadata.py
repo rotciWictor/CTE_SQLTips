@@ -98,6 +98,6 @@ conn.commit()
 cur.close()
 conn.close()
 
-print("✅ Inserção finalizada!")
+print("[OK] Inserção finalizada!")
 print(f"   {linhas_inseridas} linhas inseridas com sucesso.")
 print(f"   {linhas_com_erro} linhas encontraram erros.")
