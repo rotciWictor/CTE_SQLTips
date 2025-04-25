@@ -45,6 +45,66 @@ ORDER BY media_nota DESC;
 Resultado:
 O resultado completo da query foi exportado e está disponível no arquivo ```cte_query-result.csv``` neste repositório.
 
+## Rode localmente
+Para rodar esse projeto localmente, você vai precisar de um ambiente com Python 3+ e PostgreSQL instalado e funcionando.
+
+### ✅ Pré-requisitos
+PostgreSQL instalado e rodando localmente (ou em outro host acessível)
+
+Um banco de dados chamado filmes (ou outro nome, mas ajuste no código)
+
+Python 3.x
+
+Instale as bibliotecas necessárias com:
+
+```pip install pandas psycopg2```
+
+### 📂 Estrutura de pastas
+
+O projeto deve conter:
+```
+.
+├── movies_database/
+│   ├── movies_metadata.csv
+│   ├── ratings.csv
+│   ├── credits.csv
+│   ├── keywords.csv
+│   └── links.csv
+├── scripts/
+│   ├── script_movies_metadata.py
+│   ├── script_credits.py
+│   ├── script_keywords.py
+│   ├── script_links.py
+│   ├── script_ratings.py
+│   └── load_all.py
+├── cte_query-result.csv
+├── README.md
+└── ...
+
+```
+
+### 🛠️ Configuração do banco
+
+No início de cada script (ou no load_all.py), você verá algo assim:
+```
+DB_NAME = "filmes"
+DB_USER = "postgres"
+DB_PASSWORD = "postgres"
+DB_HOST = "localhost"
+DB_PORT = "5432"
+```
+**Essa é uma configuração de exemplo. Ajuste conforme o seu ambiente.**
+
+### ✅ Carregar os dados
+Baixe os arquivos CSV do [The Movies Dataset (Kaggle)](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset/data)
+e coloque todos dentro da pasta movies_database/.
+
+Depois, rode o script que executa tudo em sequência:
+
+```python scripts/load_all.py```
+
+E pronto. Agora é só sair explorando a base com as queries que você quiser. 😉
+
 ## 🚀 Veja o post no LinkedIn
 
 [🔗 Clique aqui para ler a publicação no LinkedIn](https://www.linkedin.com/posts/victorhscampos_sql-cte-dados-activity-7320772274175762432-9vVJ)
